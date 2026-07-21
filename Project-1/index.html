@@ -1,0 +1,173 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WCB – Medical &amp; Travel Expense Request</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <!-- ===== DATA CONTROLS (top bar) ===== -->
+    <div class="controls" id="controls">
+        <label>📄 Data set:</label>
+        <div class="btn-group" id="dataSetButtons">
+            <button class="active" data-set="default">Default (1 each)</button>
+            <button data-set="multi">Multiple items</button>
+            <button data-set="sparse">Sparse / empty</button>
+        </div>
+        <span class="badge" id="dataBadge">Showing 1 item per section</span>
+    </div>
+
+    <!-- ===== DOCUMENT ===== -->
+    <div class="document-wrapper" id="document">
+
+        <!-- TOP HEADER: logo left, contact right -->
+        <header class="wcb-header">
+            <div class="wcb-logo">
+                <div class="main">WCB1M</div>
+                <div class="sub">
+                    <span>Workers</span>
+                    <span class="divider">•</span>
+                    <span>Compensation</span>
+                    <span class="divider">•</span>
+                    <span>Board of Manitoba</span><
+                </div>
+            </div>
+            <div class="wcb-contact">
+                <div>333 Broadway Winnipeg, MB R3C 4W3</div>
+                <div>Phone: (204) 954-4321 &nbsp; Toll Free: 1-855-954-4321</div>
+                <div>wcb.mb.ca</div>
+            </div>
+        </header>
+
+        <!-- TITLE -->
+        <h1 class="doc-title">Medical &amp; Travel Expense Request</h1>
+
+        <!-- CLAIM INFO -->
+        <div class="claim-info">
+            <p>
+                Claim No. <span class="claim-no" id="claimNumber">20042047</span>
+            </p>
+            <p>
+                <span class="worker-name" id="workerName">Madeleine Willson</span>
+                requested reimbursement for the following medical and/or travel expenses:
+            </p>
+        </div>
+
+        <!-- ===== SECTION: Prescription Drugs ===== -->
+        <h2 class="section-title">Prescription Drugs</h2>
+        <div class="table-wrap">
+            <table id="prescriptionTable">
+                <thead>
+                    <tr>
+                        <th>Drug Name</th>
+                        <th>Prescription Date</th>
+                        <th>Date Purchased</th>
+                        <th>Healthcare Provider</th>
+                        <th>Paid Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="prescriptionBody">
+                    <!-- injected by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== SECTION: Over-the-Counter Drugs ===== -->
+        <h2 class="section-title">Over-the-Counter Drugs</h2>
+        <div class="table-wrap">
+            <table id="otcTable">
+                <thead>
+                    <tr>
+                        <th>Drug Name</th>
+                        <th>Date Purchased</th>
+                        <th>Paid Amount</th>
+                        <th>Seller</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody id="otcBody">
+                    <!-- injected by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== SECTION: Bandages, Braces or Other Medical Supplies ===== -->
+        <h2 class="section-title">Bandages, Braces or Other Medical Supplies</h2>
+        <div class="table-wrap">
+            <table id="suppliesTable">
+                <thead>
+                    <tr>
+                        <th>Item Purchased</th>
+                        <th>Date Purchased</th>
+                        <th>Prescribed?</th>
+                        <th>Healthcare Provider</th>
+                        <th>Paid Amount</th>
+                        <th>Seller</th>
+                    </tr>
+                </thead>
+                <tbody id="suppliesBody">
+                    <!-- injected by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== SECTION: Parking ===== -->
+        <h2 class="section-title">Parking for Medical Appointments</h2>
+        <div class="table-wrap">
+            <table id="parkingTable">
+                <thead>
+                    <tr>
+                        <th>Address</th>
+                        <th>Date</th>
+                        <th>Paid Amount</th>
+                        <th>Meter Used?</th>
+                        <th>Meter Number</th>
+                    </tr>
+                </thead>
+                <tbody id="parkingBody">
+                    <!-- injected by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== SECTION: Mileage ===== -->
+        <h2 class="section-title">Mileage to Medical Appointments</h2>
+
+        <div class="mileage-note">
+            The WCB will generally reimburse only those transportation costs which are in excess
+            of costs that would be incurred by the worker while travelling to and from work.
+        </div>
+
+        <div class="table-wrap">
+            <table id="mileageTable">
+                <thead>
+                    <tr>
+                        <th>Appointment Date</th>
+                        <th>Healthcare Provider Address</th>
+                        <th>Workplace Address</th>
+                        <th>km (Round Trip)</th>
+                    </tr>
+                </thead>
+                <tbody id="mileageBody">
+                    <!-- injected by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== PRIVACY NOTICE ===== -->
+        <div class="privacy-notice">
+            I understand that the Privacy Notice applies to the personal information collected in this document.
+        </div>
+
+        <!-- ===== FOOTER (page number only) ===== -->
+        <footer class="doc-footer">
+            <span class="page-num" id="pageNumber">Page 1 of 1</span>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>  
